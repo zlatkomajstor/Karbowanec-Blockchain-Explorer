@@ -7,14 +7,14 @@
     }
 
 #coinIcon{
-    text-transform: capitalize;
-	width: 1.3em;
+  text-transform: capitalize;
+	width: 3.1em;
 	height: 1.3em;
 	display: inline-block;
 	vertical-align: middle;
 	color: #FFF137;
 	border: 2px solid #FFF137;
-	border-radius: 50%;
+	border-radius: 30%;
 	text-align: center;
 	margin-top: -4px;
 }

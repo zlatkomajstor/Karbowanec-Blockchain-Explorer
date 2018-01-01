@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 	<link rel="shortcut icon" href="../favicon.ico">
 	<link rel="icon" type="image/icon" href="../favicon.ico" >
-    <title>Karbowanec (&#1180;) [KRB] Block Explorer</title>
+    <title>Balkancoin [BKC] Block Explorer</title>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
@@ -18,9 +18,9 @@
 <body>
 <script>
 
-	var blockchainExplorer 	= "/en/?hash={id}#blockchain_block";
-	var transactionExplorer = "/en/?hash={id}#blockchain_transaction";
-	var paymentIdExplorer 	= "/en/?hash={id}#blockchain_payment_id";
+	var blockchainExplorer 	= "?hash={id}#blockchain_block";
+	var transactionExplorer = "?hash={id}#blockchain_transaction";
+	var paymentIdExplorer 	= "?hash={id}#blockchain_payment_id";
 	
 	var style_cookie_name = "style";
 	var style_cookie_duration = 365;
@@ -263,7 +263,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="/en/"><span id="coinIcon">BKC</span> <strong>Balkancoin</strong></a>
+            <a class="navbar-brand " href="/"><span id="coinIcon">BKC</span> <strong>Balkancoin</strong></a>
 			<div id="stats_updated"><i class="fa fa-bolt"></i></div>
         </div>
 		
@@ -272,11 +272,11 @@
             <ul class="nav navbar-nav navbar-left explorer_menu">
 
 			    <li><a class="hot_link" data-page="home.html" href="#">
-                    <i class="fa fa-cubes" aria-hidden="true"></i> Block Explorer
+                    <i class="fa fa-cubes" aria-hidden="true"></i> Пребарувач
                 </a></li>
 				
 				<li><a class="hot_link" data-page="pools.html" href="#pools">
-                    <i class="fa fa-gavel" aria-hidden="true"></i> Pools
+                    <i class="fa fa-gavel" aria-hidden="true"></i> Пулови
                 </a></li>
 				
 				<li><a class="hot_link" data-page="api.html" href="#api">
@@ -292,17 +292,17 @@
 				
 	<!-- //-->			
 
-                <li style="display:none;"><a class="hot_link" data-page="blockchain_block.html" href="#blockchain_block"><i class="fa fa-cubes"></i> Block
+                <li style="display:none;"><a class="hot_link" data-page="blockchain_block.html" href="#blockchain_block"><i class="fa fa-cubes"></i> Блок
                 </a></li>
 
-                <li style="display:none;"><a class="hot_link" data-page="blockchain_transaction.html" href="#blockchain_transaction"><i class="fa fa-cubes"></i> Transaction
+                <li style="display:none;"><a class="hot_link" data-page="blockchain_transaction.html" href="#blockchain_transaction"><i class="fa fa-cubes"></i> Трансакција
                 </a></li>
 				
-				<li style="display:none;"><a class="hot_link" data-page="blockchain_payment_id.html" href="#blockchain_payment_id"><i class="fa fa-cubes"></i> Transactions by Payment ID
+				<li style="display:none;"><a class="hot_link" data-page="blockchain_payment_id.html" href="#blockchain_payment_id"><i class="fa fa-cubes"></i> Трансакција со Payment ID
                 </a></li>
 
                 <li><a  style="display:none;" class="hot_link" data-page="support.html" href="#support">
-                    <i class="fa fa-comments"></i> Help
+                    <i class="fa fa-comments"></i> Помош
                 </a></li> 
 
 <!-- //-->
@@ -311,9 +311,9 @@
 					
 			<div class="nav col-md-6 navbar-right explorer-search">
 				<div class="input-group">
-					<input class="form-control" placeholder="Search by block height / hash, transaction hash, payment id" id="txt_search">
+					<input class="form-control" placeholder="Барај по висина на блокот / хаш, трансакционен хаш, payment id" id="txt_search">
 					<span class="input-group-btn"><button class="btn btn-default" type="button" id="btn_search">
-						<span><i class="fa fa-search"></i> Search</span>
+						<span><i class="fa fa-search"></i> Барај</span>
 					</button></span>
 				</div>
 			</div>
@@ -483,7 +483,7 @@ $('#txt_search').keyup(function(e){
 			<div class="col-lg-4 col-md-4 col-sm-6">
 				<p>
 					<small>
-						&copy; 2017 <strong>Karbo</strong>vanets. 
+						&copy; 2018 <strong>Balkancoin</strong> 
 					</small>
 				</p>
 			</div>
@@ -502,7 +502,7 @@ $('#txt_search').keyup(function(e){
 			<div class="col-lg-4 col-md-4 col-sm-6">
 			
 				<ul>
-					<li><a href="http://karbowanec.com/en/">karbowanec.com</li>
+					<li><a href="http://www.balkancoin.org/">www.balkancoin.org</li>
 				</ul>
 				
 			</div>
