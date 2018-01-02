@@ -12,8 +12,8 @@
 	height: 1.3em;
 	display: inline-block;
 	vertical-align: middle;
-	color: #FFF137;
-	border: 2px solid #FFF137;
+	color: #fbb03b;
+	border: 2px solid #fbb03b;
 	border-radius: 30%;
 	text-align: center;
 	margin-top: -4px;
@@ -57,10 +57,43 @@ body {
   background-color: #00A0E3;
 }
 
+.navbar-default {
+  background-color: #c20000;
+  background-image: linear-gradient(#c20000, #c69c6c 60%, #c20000);
+  border-color: #fbb03b;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+  color: #ffffff;
+  background-color: #c20000;
+}
+
+h2, h3, h4 {
+  color: #fbb03b;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+  color: #ffffff;
+  background-color: #c20000;
+}
+
+a {
+    color: #c69c6c;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #fbb03b;
+    text-decoration: underline;
+}
+
 .navbar-default .navbar-nav>li>a .fa,
 .navbar-default .navbar-nav>.active>a .fa,
 .navbar-inverse .fa {
-	color: #FFF137;
+	color: #fbb03b;
 }
 
 
@@ -84,7 +117,7 @@ hr {
 }
 
 .stats > div i.fa {
-  color: #00A0E3;
+  color: #fbb03b;
   font-size: 21px;
   width: 30px;
   text-align: center;
@@ -94,7 +127,7 @@ hr {
   padding: 0 2px;
 }
 .nav .form-control {
-  border: 1px solid #00A0E3;
+  border: 1px solid #fbb03b;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -105,7 +138,7 @@ hr {
 .nav .form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-color: #178ACC;
+  border-color: #fbb03b;
 }
 .nav .input-group-addon {
   background-color: #00A0E3;
@@ -114,8 +147,8 @@ hr {
 }
 .nav .btn-default {
   color: #ffffff;
-  background-color: #00A0E3;
-  border-color: #00A0E3;
+  background-color: #c69c6c;
+  border-color: #fbb03b;
 }
 .nav .btn-default:hover,
 .nav .btn-default:focus,
@@ -123,8 +156,8 @@ hr {
 .nav .btn-default.active,
 .nav .open > .dropdown-toggle.btn-default {
   color: #ffffff;
-  background-color: #178ACC;
-  border-color: #026a4d;
+  background-color: #c20000;
+  border-color: #fbb03b;
 }
 .nav .btn-default:active,
 .nav .btn-default.active,
@@ -212,8 +245,8 @@ code {
   background-color: #dbebff;
 }
 .table > thead > tr > th {
-  color: #336A80;
-  border-bottom-color: #336A80;
+  color: #fbb03b;
+  border-bottom-color: #fbb03b;
   text-align: center;
   font-size: 1em;
 }
