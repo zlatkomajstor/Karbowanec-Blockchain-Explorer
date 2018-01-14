@@ -1,6 +1,6 @@
 <?php 
 $data_string = '{"jsonrpc":"2.0","id":"test","method":"getlastblockheader","params":" "}';
-$ch = curl_init('http://us5.balkancoin.org:38777/json_rpc');
+$ch = curl_init('http://explorer.balkancoin.org:38777/json_rpc');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
