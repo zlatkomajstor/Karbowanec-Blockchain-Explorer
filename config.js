@@ -6,12 +6,8 @@ var refreshDelay = 30000;
 // pools stats by MainCoins
 var networkStat = {
     "bkc": [
-    	["pool.balkancoin.org", "http://miner.balkancoin.org:8147"],
-		["bkc.mininggood.com", "http://us2.mininggood.com:8147"]	
+        ["pool.balkancoin.org", "http://miner.balkancoin.org:8147/stats"],
+        ["bkc.mininggood.com", "http://us2.mininggood.com:8147/stats"],
+        ["bkc.euminingpool.com", "http://bkc.euminingpool.com:8147/stats"]
     ]
-};
-
-var networkStat2 = {
-    "bkc": [
-		]
 };

@@ -8,7 +8,7 @@
         <div><span data-toggle="tooltip" data-placement="right" data-original-title="Size of the transaction in bytes."><i class="fa fa-question-circle"></i></span> Size: <span id="transaction.size"></span></div>
         <div id="div_transaction_paymentId"><span data-toggle="tooltip" data-placement="right" data-original-title="Optional user-defined hexadecimal characters string. Can be used by anyone to distinguish the transactions easier."><i class="fa fa-question-circle"></i></span> Payment ID: <span id="transaction.paymentId"></span>
 		<br />
-		Patment ID decoding: <em id="transaction.paymentIdDecifer"></em></div>
+		Payment ID decoding: <em id="transaction.paymentIdDecifer"></em></div>
         <div id="div_transaction_mixin"><span data-toggle="tooltip" data-placement="right" data-original-title="Denotes how many random inputs are mixed within this transactions in order to achieve desired level of anonimity. Mixin count 1 means no additional inputs are mixed in and thus each input can be traced back."><i class="fa fa-question-circle"></i></span> Mixin count: <span id="transaction.mixin"></span></div>
 		<div id="tx_unconfirmed" style="display: none;"><span data-toggle="tooltip" data-placement="right" data-original-title="The transaction is not included into block yet and therefore is not wtitten into blockchain."><i class="fa fa-question-circle"></i></span> <span class="text-warning">Unconfirmed transaction</span></div>
     </div>
@@ -31,6 +31,7 @@
         <tr>
             <th><i class="fa fa-money"></i> Amount</th>
             <th><i class="fa fa-paw"></i> Image</th>
+			<th><i class="fa fa-arrows-alt"></i> Offset</th>
         </tr>
         </thead>
         <tbody id="inputs_rows">
@@ -102,7 +103,7 @@
                 inputs = transaction.tx.vin;
                 outputs = transaction.tx.vout;
                 block = transaction.block;
-				
+
                 updateText('transaction.hash', details.hash);
                 if (block.hash){
 					$('#confirmations').show();
@@ -119,24 +120,25 @@
 				updateText('transaction.paymentIdDecifer', hex2a(details.paymentId));
                 if (!details.paymentId)
                     $('#div_transaction_paymentId').hide();
-                updateText('transaction.size', details.size);
+                updateText('transaction.size', formatBytes(parseInt(details.size)));
 
 				if (!block.hash){
 					$('#tx_block').hide();
 					$('#tx_unconfirmed').show();
 				}
-				
+
                 updateTextLinkable('block.hash', formatBlockLink(block.hash));
                 updateText('block.height', block.height);
                 updateText('block.timestamp', formatDate(block.timestamp));
-				
+
                 renderInputs(inputs);
                 renderOutputs(outputs);
 	}
 
     function getInputCells(input){
         return '<td>' + getReadableCoins(input.value.amount) + '</td>' +
-            '<td>' + input.value.k_image + '</td>';
+            '<td>' + input.value.k_image + '</td>' +
+            '<td>' + input.value.key_offsets + '</td>';
     }
 
 
@@ -145,6 +147,7 @@
         var row = document.createElement('tr');
         row.setAttribute('data-json', jsonString);
         row.setAttribute('data-k_image', input.value.k_image);
+		row.setAttribute('data-key_offsets', input.value.key_offsets);
         row.setAttribute('id', 'inputRow' + input.value.k_image);
 
         row.innerHTML = getInputCells(input);
@@ -157,14 +160,14 @@
         var $inputsRows = $('#inputs_rows');
 
         for (var i = 0; i < inputResults.length; i++){
-		
+
             var input = inputResults[i];
-		
+
             if (!input.value.amount)
                 continue;
-				
+
             var inputJson = JSON.stringify(input);
-			
+
             var existingRow = document.getElementById('inputRow' + input.value.k_image);
 
             if (existingRow && existingRow.getAttribute('data-json') !== inputJson){
@@ -175,9 +178,9 @@
                 var inputElement = getInputRowElement(input, inputJson);
                 $inputsRows.append(inputElement);
             }
-			
+
         }
-		
+
 		updateText('inputs_count', document.querySelectorAll('#inputs_rows tr').length);
     }
 
@@ -209,7 +212,7 @@
             var output = outputResults[i];
 
             var outputJson = JSON.stringify(output);
-			
+
             var existingRow = document.getElementById('outputRow' + output.target.data.key);
 
             if (existingRow && existingRow.getAttribute('data-json') !== outputJson){
@@ -220,12 +223,12 @@
                 var outputElement = getOutputRowElement(output, outputJson);
                 $outputsRows.append(outputElement);
             }
-			
+
         }
-		
+
 		updateText('outputs_count', document.querySelectorAll('#outputs_rows tr').length);
     }
-	
+
 	$(function() {
 		$('[data-toggle="tooltip"]').tooltip();
 	});

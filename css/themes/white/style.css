@@ -51,6 +51,28 @@ h2 small {
   border-color: #fbb03b;
 }
 
+.panel-primary, .panel-primary>.panel-heading {
+    background-color: #232b30;
+    border-color: #fbb03b;
+}
+
+.panel-primary .panel-title {
+    color: #c69c6c;
+}
+
+.list-group-item,
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+    color: #c69c6c;
+    background-color: #232b30;
+    border-color: #fbb03b;
+}
+
+.text-info {
+    color: #c69c6c;
+}
+
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover {
     color: #adb2ac;
@@ -145,7 +167,7 @@ a:hover, a:focus {
 
 #stats_updated {
   color: #F4FC3D;
-  position: absolute; 
+  position: absolute;
   right: 10px;
   top: 15px;
 }
@@ -312,11 +334,12 @@ code {
   font-size: 1em;
 }
 .table > tbody > tr > td {
-  border-top-color: #fbb03b;  
+  border-top-color: #fbb03b;
   vertical-align: middle;
   font-family: 'Inconsolata', monospace;
   font-size: 1em;
   text-align: center;
+  padding: 8px 2px;
 }
 
 td .mtx-ago,
@@ -332,8 +355,12 @@ td .timeago {
 	text-align: left;
 }
 
+#blocks_rows > tr > td:nth-child(4) {
+	font-size: 85%;
+}
+
 #content {
-	margin-bottom: 200px;
+	margin-bottom: 300px;
 	z-index: 1;
 	background-color: #232b30;
 }
@@ -346,7 +373,7 @@ footer {
   z-index: -1;
   padding: 30px 0;
   width: 100%;
-  height: 200px;
+  height: 300px;
 }
 
 .scrollup{
@@ -354,7 +381,7 @@ footer {
 	position:fixed;
 	bottom:50px;
 	right:100px;
-	display:none;			
+	display:none;
 	text-align: center;
 	line-height: 50px;
 	font-size: 50px;
@@ -449,7 +476,7 @@ b {
     border: 1px solid #e5e5e5;
     margin: 2px;
 }
-	
+
 .blocksStatHolder > span > span{
     font-weight: bold;
 }
