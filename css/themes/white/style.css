@@ -80,6 +80,10 @@ h2 small {
     color: #c69c6c;
 }
 
+.dropdown-menu {
+    background-color: transparent;
+}
+
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover {
     color: #adb2ac;
