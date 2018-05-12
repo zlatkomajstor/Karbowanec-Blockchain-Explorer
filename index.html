@@ -250,8 +250,8 @@
 
     $(function(){
         $.get(api + '/getinfo', function(data){
-            lastStats = JSON.parse(data);
-            //lastStats = data;
+            //lastStats = JSON.parse(data);
+            lastStats = data;
             routePage(fetchLiveStats);
         });
     });
