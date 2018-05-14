@@ -8,6 +8,6 @@ var networkStat = {
     "bkc": [
         ["pool.balkancoin.org", "http://miner.balkancoin.org:8147/stats"],
         ["bkc.mininggood.com", "http://us2.mininggood.com:8147/stats"],
-        ["youpool.io", "http://118.178.122.224:8118/stats"]
+        ["youpool.io/BKC", "http://118.178.122.224:8118/stats"]
     ]
 };
