@@ -1,4 +1,5 @@
 var api = 'http://explorer.balkancoin.org:38777';
+var apiList = ["http://explorer2.balkancoin.org:38777"];
 var blockTargetInterval = 30;
 var coinUnits = 100000000;
 var symbol = 'BKC';
