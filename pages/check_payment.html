@@ -14,7 +14,7 @@
 				<div class="form-group">
 					<label for="transaction_hash" style="margin-bottom: 10px;">Transaction Hash</label>
 						<input class="form-control" placeholder="64 char transaction id" id="transaction_hash">
-				</div>		
+				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="form-group">
@@ -30,7 +30,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label for="public_address">Recipient Public Address</label>
-					<input class="form-control" placeholder="Public Karbo receiver's address" id="public_address">
+					<input class="form-control" placeholder="Public Balkancoin receiver's address" id="public_address">
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -50,7 +50,7 @@
 	<h2>Received <span id="receivedAmount"></span> in transaction: <span id="transactionHash" style="word-break: break-all;"></span></h2>
   </div>
   <div class="panel-body">
-	
+
 	<div class="row" id="tx_info">
 		<div class="col-md-12 stats">
 			<div id="confirmations" style="display: none;"><span data-toggle="tooltip" data-placement="right" data-original-title="The number of network confirmations."><i class="fa fa-question-circle"></i></span> Confirmations: <span id="transaction.confirmations"></span>, First confirmation time: <span id="transaction.timestamp"></span> (<time class="transaction-timeago"></time>)</div>
@@ -136,7 +136,7 @@
         }
     };
 	$("#check_result").hide();
-	
+
 	$("#check_transaction").click(function() {
 		$("#check_result").hide();
 		$('#inputs_rows').empty();
@@ -172,18 +172,18 @@
 			  } else {
 				var tx = data.result;
 				renderTransaction(tx);
-				
+
 				if (privateKeyType === "tx_key") {
 					checkTxKey();
 				} else if (privateKeyType === "view_key") {
 					checkViewKey();
 				}
-				
+
 			  }
 			}
 		});
-	}	
-	
+	}
+
 	function checkTxKey(){
 		if (xhrCheckTransactionByKey) xhrCheckTransactionByKey.abort();
 		xhrCheckTransactionByKey = $.ajax({
@@ -207,7 +207,7 @@
 			  } else {
 				var result = data.result;
 				$("#receivedAmount").html(getReadableCoins(result.amount,12));
-				
+
 				var outputResults = result.outputs;
 				for (var i = 0; i < outputResults.length; i++){
 					$('#outputs_rows tr').each(function() {
@@ -215,21 +215,21 @@
 						if ($this.attr('data-k_image') === outputResults[i].target.data.key) {
 							$this.addClass("success");
 						}
-					});				
+					});
 				}
 				$("#check_result").show();
 			  }
 			}
 		});
 	}
-	
+
 	function checkViewKey(){
 		// in case some one will try to use tracking key from GUI extract private view key from it
 		var privateViewKey = privateKey.val();
 		if (privateViewKey.length === 256) {
 			privateViewKey = privateViewKey.substr(privateViewKey.length - 64);
 		}
-	
+
 		if (xhrCheckTransactionByViewKey) xhrCheckTransactionByViewKey.abort();
 		xhrCheckTransactionByViewKey = $.ajax({
 			url: api + '/json_rpc',
@@ -252,7 +252,7 @@
 			  } else {
 				var result = data.result;
 				$("#receivedAmount").html(getReadableCoins(result.amount,12));
-				
+
 				var outputResults = result.outputs;
 				for (var i = 0; i < outputResults.length; i++){
 					$('#outputs_rows tr').each(function() {
@@ -260,20 +260,20 @@
 						if ($this.attr('data-k_image') === outputResults[i].target.data.key) {
 							$this.addClass("success");
 						}
-					});				
+					});
 				}
 				$("#check_result").show();
 			  }
 			}
 		});
 	}
-	
+
 	function renderTransaction(transaction){
 				var details = transaction.txDetails;
                 inputs = transaction.tx.vin;
                 outputs = transaction.tx.vout;
                 block = transaction.block;
-				
+
                 updateText('transactionHash', details.hash);
                 if (block.hash){
 					$('#confirmations').show();
@@ -296,11 +296,11 @@
 					$('#tx_block').hide();
 					$('#tx_unconfirmed').show();
 				}
-				
+
                 updateTextLinkable('block.hash', formatBlockLink(block.hash));
                 updateText('block.height', block.height);
                 updateText('block.timestamp', formatDate(block.timestamp));
-				
+
                 renderInputs(inputs);
                 renderOutputs(outputs);
 	}
@@ -330,14 +330,14 @@
         var $inputsRows = $('#inputs_rows');
 
         for (var i = 0; i < inputResults.length; i++){
-		
+
             var input = inputResults[i];
-		
+
             if (!input.value.amount)
                 continue;
-				
+
             var inputJson = JSON.stringify(input);
-			
+
             var existingRow = document.getElementById('inputRow' + input.value.k_image);
 
             if (existingRow && existingRow.getAttribute('data-json') !== inputJson){
@@ -348,9 +348,9 @@
                 var inputElement = getInputRowElement(input, inputJson);
                 $inputsRows.append(inputElement);
             }
-			
+
         }
-		
+
 		updateText('inputs_count', document.querySelectorAll('#inputs_rows tr').length);
     }
 
@@ -382,7 +382,7 @@
             var output = outputResults[i];
 
             var outputJson = JSON.stringify(output);
-			
+
             var existingRow = document.getElementById('outputRow' + output.target.data.key);
 
             if (existingRow && existingRow.getAttribute('data-json') !== outputJson){
@@ -393,23 +393,23 @@
                 var outputElement = getOutputRowElement(output, outputJson);
                 $outputsRows.append(outputElement);
             }
-			
+
         }
-		
+
 		updateText('outputs_count', document.querySelectorAll('#outputs_rows tr').length);
     }
-	
+
 	$(function() {
 		$('[data-toggle="tooltip"]').tooltip();
 	});
-	
+
 	function wrongParamAlert(message) {
 	$('#page').after(
 		'<div class="alert alert-danger alert-dismissable fade in" style="position: fixed; right: 50px; top: 50px;">'+
-		'<button type="button" class="close" ' + 
-		'data-dismiss="alert" aria-hidden="true">' + 
-		'&times;' + 
-		'</button>' + 
+		'<button type="button" class="close" ' +
+		'data-dismiss="alert" aria-hidden="true">' +
+		'&times;' +
+		'</button>' +
 		'<strong>' + message + '</strong><br />' +
 		'</div>');
 	}
