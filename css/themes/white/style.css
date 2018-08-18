@@ -20,6 +20,17 @@ h2 small {
   background-color: #232b30;
   border-color: #fbb03b;
 }
+
+#check_transaction {
+  background-image: none;
+  background-color: #c69c6c;
+  border-color: #fbb03b;
+}
+
+#check_transaction:hover {
+  background-color: #fbb03b;
+}
+
 .form-control {
   border-color: #fbb03b;
 }
