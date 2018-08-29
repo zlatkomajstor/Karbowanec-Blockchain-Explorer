@@ -1,5 +1,5 @@
-var api = 'http://explorer.balkancoin.org:38777';
-var apiList = ["http://explorer2.balkancoin.org:38777"];
+var api = 'http://199.247.19.238:38777';
+var apiList = ["http://132.148.135.136:38777"];
 var blockTargetInterval = 30;
 var coinUnits = 100000000;
 var symbol = 'BKC';
@@ -8,8 +8,7 @@ var refreshDelay = 30000;
 var networkStat = {
     "bkc": [
         ["pool.balkancoin.org", "http://miner.balkancoin.org:8147/stats"],
-        ["bkc.mininggood.com", "http://us2.mininggood.com:8147/stats"],
-        ["npool.pw/bkc", "https://api.npool.pw/bkc/stats"],
-        ["balkan.poolfun.ru", "http://bkc.poolfun.ru:8147/stats"]
+        ["pool2.balkancoin.org", "http://miner2.balkancoin.org:8147/stats"],
+        ["npool.pw/bkc", "https://api.npool.pw/bkc/stats"]
     ]
 };
