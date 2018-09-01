@@ -1,5 +1,5 @@
 var api = 'http://199.247.19.238:38777';
-var apiList = ["http://132.148.135.136:38777"];
+var apiList = ["http://132.148.135.136:38777", "http://132.148.135.237:38777"];
 var blockTargetInterval = 30;
 var coinUnits = 100000000;
 var symbol = 'BKC';
