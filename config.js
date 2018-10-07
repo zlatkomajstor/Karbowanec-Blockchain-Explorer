@@ -9,6 +9,6 @@ var networkStat = {
     "bkc": [
         ["pool.balkancoin.org", "http://miner.balkancoin.org:8147/stats"],
         ["pool2.balkancoin.org", "http://miner2.balkancoin.org:8147/stats"],
-        ["npool.pw/bkc", "https://api.npool.pw/bkc/stats"]
+        ["bkc.go-mine.it", "https://bkc.go-mine.it/api/pool/stats"]
     ]
 };
