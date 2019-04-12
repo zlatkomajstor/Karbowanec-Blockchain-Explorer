@@ -1,7 +1,7 @@
 <?php
-$node = 'http://31.3.91.232:38777';
+$node = 'http://explorer.balkancoin.org/services/node_web';
 return array(
-	'api' => 'http://31.3.91.232:38777',
+	'api' => 'http://explorer.balkancoin.org/services/node_web',
 	'blockTargetInterval' => 30,
 	'coinUnits' => 100000000,
 	'coinDecimals' => 8

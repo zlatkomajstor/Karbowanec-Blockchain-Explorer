@@ -1,4 +1,4 @@
-var api = 'http://31.3.91.232:38777';
+var api = 'http://explorer.balkancoin.org/services/node_web';
 var apiList = ["http://31.3.91.233:38777", "http://195.201.112.102:38777"];
 var blockTargetInterval = 30;
 var coinUnits = 100000000;
