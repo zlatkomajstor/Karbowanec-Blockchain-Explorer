@@ -9,7 +9,9 @@ var nightTheme = "css/themes/dark-theme.css";
 // pools stats by MainCoins
 var poolsStat =
 	[
-		["pool.balkancoin.org", "http://miner.balkancoin.org:8147/stats"]
+		["pool.balkancoin.org", "http://miner.balkancoin.org:8147/stats"],
+		["easyhash.pro/bkc", "https://easyhash.pro/bkc/api/stats"],
+		["bkc.bubblemine.com", "http://bkcminer.bubblemine.com:8147/stats"]
     ];
 var nodesStat =
 	[
